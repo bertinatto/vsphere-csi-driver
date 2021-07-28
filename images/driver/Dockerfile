@@ -48,6 +48,8 @@ RUN go build -a -ldflags="-w -s -extldflags=static -X sigs.k8s.io/vsphere-csi-dr
 FROM ${BASE_IMAGE}
 LABEL "maintainers"="Divyen Patel <divyenp@vmware.com>, Sandeep Pissay Srinivasa Rao <ssrinivas@vmware.com>, Xing Yang <yangxi@vmware.com>"
 
+ADD pkg/apis/migration/config/cns.vmware.com_cnsvspherevolumemigrations.yaml /config/
+
 # install nfs-utils, util-linux and e2fsprogs
 # nfs-utils  : The nfs-utils package contains simple nfs client service.
 # util-linux : Utilities for handling file systems, consoles, partitions.
